@@ -2,4 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  spree:
+    upload_from_file: Upload From File
+    successfully_added_to_queue: File has been successfully added to queue. It will process soon.
+    not_added_to_queue: File hasn't been added.

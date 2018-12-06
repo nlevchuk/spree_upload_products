@@ -1,0 +1,19 @@
+<%= render partial: 'spree/admin/shared/error_messages', locals: { target: @product_file } %>
+
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:products), spree.admin_products_url %> /
+  <%= Spree.t(:upload_products) %>
+<% end %>
+
+<%= form_for [:admin, @product_file], url: spree.upload_admin_products_url,
+                                        method: :post, html: { multipart: true } do |f| %>
+  <fieldset data-hook="upload_products">
+    <%= f.field_container :file, class: ['form-group'] do %>
+      <%= f.label :file, Spree.t(:file) %> <span class="required">*</span>
+      <%= f.file_field :file, class: 'form-control title', required: :required %>
+      <%= f.error_message_on :file %>
+    <% end %>
+
+    <%= render partial: 'spree/admin/shared/new_resource_links' %>
+  </fieldset>
+<% end %>
