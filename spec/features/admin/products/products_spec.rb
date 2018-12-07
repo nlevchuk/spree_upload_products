@@ -13,11 +13,11 @@ describe 'Products', type: :feature do
         expect(page.current_path).to eq(spree.upload_admin_products_path)
       end
 
-      # it 'displays error message if file is empty' do
-      #   visit spree.upload_admin_products_path
-      #   click_button 'Create'
-      #   expect(page).to have_content('select a file')
-      # end
+      it 'displays error message if file is empty' do
+        visit spree.upload_admin_products_path
+        click_button 'Create'
+        expect(page).to have_content('select a file')
+      end
 
       it 'displays success message if no errors' do
         visit spree.upload_admin_products_path
