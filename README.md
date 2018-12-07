@@ -1,7 +1,7 @@
 SpreeUploadProducts
 ===================
 
-Introduction goes here.
+[![Build Status](https://travis-ci.com/nlevchuk/spree_upload_products.svg?branch=master)](https://travis-ci.com/nlevchuk/spree_upload_products)
 
 ## Installation
 
