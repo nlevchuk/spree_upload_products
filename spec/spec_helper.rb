@@ -18,6 +18,8 @@ require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 require 'rspec/rails'
 require 'database_cleaner'
 require 'ffaker'
+require 'byebug'
+require 'sidekiq/testing'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -97,6 +99,7 @@ RSpec.configure do |config|
   config.before :each do
     DatabaseCleaner.strategy = RSpec.current_example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
+    Sidekiq::Worker.clear_all
   end
 
   # After each spec clean the database.
